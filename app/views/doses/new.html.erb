@@ -1,16 +1,17 @@
-<h3>Ajoute une dose</h3>
-
-<div class="d-flex row">
+<div class="container mt-4">
+  <h3>Ajoute une dose d'un truc frere</h3>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <div class="d-flex row">
 
 
-  <div class="col-8">
-    <%= f.association :ingredient %>
-</div>
-  <div class="col-4">
-    <%= f.input :description, as: :integer %>
-  </div>
+      <div class="col-8">
+        <%= f.association :ingredient %>
+      </div>
+      <div class="col-4">
+        <%= f.input :description, as: :integer %>
+      </div>
+        <%= f.submit "Add", class: "btn btn-info" %>
+      <% end %>
 
-  <% end %>
-
+    </div>
 </div>
