@@ -1,18 +1,22 @@
+<%= render 'layouts/_shared/banner' %>
+
 <div class="container mt-4">
+  <div class="card-me">
+    <% @cocktails.each do |cocktail| %>
 
-  <h1>COKE TEL</h1>
-  <% @cocktails.each do |cocktail| %>
 
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= cocktail.name %></h5>
-        <p class="card-text">cocktail description</p>
-        <p class="card-text"><small class="text-muted">excellent</small></p>
+      <div class="card bg-dark text-white shadow-lg">
+        <img class="card-img" src="<%= "https://source.unsplash.com/1600x900/?" + cocktail.name %>" alt="Card image">
+        <div class="card-img-overlay">
+          <h5 class="card-title"> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-title font-weight-bold link-cocktail" %></h5>
+          <p class="card-text">
+            <% cocktail.doses.each do |dose| %>
+            <p><strong><%= dose.ingredient.name %></strong> - <%= dose.description %> cl</p>
+            <% end %>
+          </p>
+        </div>
       </div>
-      <img src="https://source.unsplash.com/1600x900/?<% cocktail.name %>" class="card-img-top" alt="cocktail-img">
-    </div>
 
-  <% end %>
-
-  <%= link_to 'New coke tel', new_cocktail_path, class: 'btn btn-info' %>
+    <% end %>
+  </div>
 </div>

@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 2019_11_14_105613) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.bigint "cocktail_id"
+    t.bigint "ingredient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cocktail_id"], name: "index_ingredients_on_cocktail_id"
+    t.index ["ingredient_id"], name: "index_ingredients_on_ingredient_id"
   end
 
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
-  add_foreign_key "ingredients", "cocktails"
+  add_foreign_key "ingredients", "ingredients"
 end
