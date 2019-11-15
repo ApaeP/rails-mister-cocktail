@@ -12,18 +12,3 @@
 @import "components/index";
 @import "pages/index";
 
-.card-me {
-  display: grid;
-  grid-gap: 25px;
-  flex-grow: 1;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.link-cocktail {
-  font-size: 30px;
-  color: white;
-}
-
-body {
-  background-image: url("https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80")
-}
